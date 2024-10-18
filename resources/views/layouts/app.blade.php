@@ -3,27 +3,49 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>POKEDEX</title>
-
-    <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    {{-- <link rel="stylesheet" href="{{ asset('css/styles.css') }}"> --}}
-
-    <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <style>
+.bg-purple {
+    background-color: #6f42c1;
+}
+.card .bg-brown {
+    background-color: #8B4513;
+}
+
+.card .bg-pink {
+    background-color: #ff69b4;
+}
+
+.bg-silver {
+    background-color: #c0c0c0;
+}
+
+    </style>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow">
             <div class="container">
+                <h1>-</h1>
+
                 <a class="navbar-brand" href="{{ url('/') }}">
                     POKEDEX
                 </a>
+                <h1>-</h1>
+                <a class="navbar-brand" href="{{ url('/pokemon') }}">
+                    Pokedex List
+                </a>
+                <h1>-</h1>
+
+                <a class="navbar-brand" href="{{ url('/pokemon/create') }}">
+                     Found A New Pokemon
+                </a>
+
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -31,9 +53,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        {{-- <a class="nav-link" href="{{ route('pokemon.index') }}">Pokemon List</a> --}}
                     </ul>
-
+                    <ul class="navbar-nav mx-2">
+                        {{-- <a class="nav-link" href="{{ route('pokemon.create') }}">Add A New Pokemon</a> --}}
+                    </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
